@@ -18,7 +18,7 @@ object ForwardPartition {
 
     println("-------------------forward-------------------")
 
-    //使用shuffle分区
+    //使用forward分区
     val customPT: DataStream[String] = number.forward
     customPT.print()
 

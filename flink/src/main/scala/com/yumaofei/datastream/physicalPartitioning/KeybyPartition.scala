@@ -18,7 +18,7 @@ object KeybyPartition {
 
     println("-------------------keyBy-------------------")
 
-    //使用shuffle分区
+    //使用keyBy分区
     val customPT: DataStream[String] = number.keyBy((x:String)=>{x.toInt/2})
     customPT.print()
 

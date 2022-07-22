@@ -19,7 +19,7 @@ object KafkaSource {
     properties.setProperty("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
     properties.setProperty("auto.offset.reset", "latest");
 
-    val input: DataStream[String] = env.addSource(new FlinkKafkaConsumer[String]("test", new SimpleStringSchema(), properties))
+    val input: DataStream[String] = env.addSource(new FlinkKafkaConsumer[String]("oms_om_order_time", new SimpleStringSchema(), properties))
 
     input.print()
 

@@ -17,7 +17,7 @@ object RescalePartition {
 
     println("-------------------rescale-------------------")
 
-    //使用shuffle分区
+    //使用rescale分区
     val customPT: DataStream[String] = number.rescale
     customPT.print()
 

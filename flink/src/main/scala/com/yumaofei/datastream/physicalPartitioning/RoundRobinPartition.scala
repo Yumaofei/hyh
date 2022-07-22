@@ -17,7 +17,7 @@ object RoundRobinPartition {
 
     println("-------------------RoundRobin-------------------")
 
-    //使用shuffle分区
+    //使用RoundRobin分区
     val customPT: DataStream[String] = number.rebalance
     customPT.print()
 

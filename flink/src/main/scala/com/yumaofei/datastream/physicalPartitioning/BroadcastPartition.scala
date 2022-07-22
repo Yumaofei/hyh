@@ -17,7 +17,7 @@ object BroadcastPartition {
 
     println("-------------------broadcast-------------------")
 
-    //使用shuffle分区
+    //使用broadcast分区
     val customPT: DataStream[String] = number.broadcast
     customPT.print()
 
