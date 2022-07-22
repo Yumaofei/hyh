@@ -4,9 +4,8 @@ import java.util.Properties
 
 import com.alibaba.fastjson.JSON
 import org.apache.flink.api.common.functions.AggregateFunction
-import org.apache.flink.streaming.api.functions.timestamps.BoundedOutOfOrdernessTimestampExtractor
 import org.apache.flink.streaming.api.scala.{DataStream, KeyedStream, StreamExecutionEnvironment, WindowedStream}
-import org.apache.flink.streaming.api.windowing.assigners.SlidingEventTimeWindows
+import org.apache.flink.streaming.api.windowing.assigners.SlidingProcessingTimeWindows
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
@@ -28,7 +27,7 @@ object ProcessTimeSlidingWindowDemo {
 
     val keyBy: KeyedStream[(String, String), String] = map.keyBy(_._1)
 
-    val slide: WindowedStream[(String, String), String, TimeWindow] = keyBy.window(SlidingEventTimeWindows.of(Time.seconds(10), Time.seconds(10)))
+    val slide: WindowedStream[(String, String), String, TimeWindow] = keyBy.window(SlidingProcessingTimeWindows.of(Time.seconds(10), Time.seconds(10)))
 
     val aggregate: DataStream[(String,Int)] = slide.aggregate(new MyAggregate)
 

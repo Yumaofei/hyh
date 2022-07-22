@@ -4,9 +4,8 @@ import java.util.Properties
 
 import com.alibaba.fastjson.JSON
 import org.apache.flink.api.common.functions.AggregateFunction
-import org.apache.flink.streaming.api.functions.timestamps.BoundedOutOfOrdernessTimestampExtractor
 import org.apache.flink.streaming.api.scala.{AllWindowedStream, DataStream, StreamExecutionEnvironment}
-import org.apache.flink.streaming.api.windowing.assigners.TumblingEventTimeWindows
+import org.apache.flink.streaming.api.windowing.assigners.TumblingProcessingTimeWindows
 import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.api.windowing.windows.TimeWindow
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
@@ -26,7 +25,7 @@ object ProcessTimeTumblingWindowAllDemo {
 
     val map: DataStream[(String, String)] = input.map(value => (JSON.parseObject(value).getString("database"), value))
 
-    val allWindow: AllWindowedStream[(String, String), TimeWindow] = map.windowAll(TumblingEventTimeWindows.of(Time.seconds(10)))
+    val allWindow: AllWindowedStream[(String, String), TimeWindow] = map.windowAll(TumblingProcessingTimeWindows.of(Time.seconds(10)))
 
     val aggregate: DataStream[(String,Int)] = allWindow.aggregate(new MyAggregate)
 
