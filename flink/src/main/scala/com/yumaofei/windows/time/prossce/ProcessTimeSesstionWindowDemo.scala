@@ -44,6 +44,5 @@ object ProcessTimeSesstionWindowDemo {
     reduce.print()
 
     env.execute()
-
   }
 }
