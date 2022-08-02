@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bigdataLineageAnaly/bigdataLineageAnaly.iml" filepath="$PROJECT_DIR$/bigdataLineageAnaly/bigdataLineageAnaly.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dataDictionary/dataDictionary.iml" filepath="$PROJECT_DIR$/dataDictionary/dataDictionary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flink/flink.iml" filepath="$PROJECT_DIR$/flink/flink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kudu/kudu.iml" filepath="$PROJECT_DIR$/kudu/kudu.iml" />
+    </modules>
+  </component>
+</project>
