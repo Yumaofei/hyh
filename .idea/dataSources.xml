@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Apache Hive - @zehui01" uuid="168b8e41-21e1-467f-acea-07490715a6a9">
+      <driver-ref>hive</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.cloudera.hive.jdbc41.HS2Driver</jdbc-driver>
+      <jdbc-url>jdbc:hive2://zehui01:10000</jdbc-url>
+    </data-source>
+  </component>
+</project>

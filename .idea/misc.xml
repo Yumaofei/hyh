@@ -6,6 +6,8 @@
         <option value="$PROJECT_DIR$/flink/pom.xml" />
         <option value="$PROJECT_DIR$/bigdataLineageAnaly/pom.xml" />
         <option value="$PROJECT_DIR$/dataDictionary/pom.xml" />
+        <option value="$PROJECT_DIR$/kudu/pom.xml" />
+        <option value="$PROJECT_DIR$/hive/pom.xml" />
       </list>
     </option>
   </component>
