@@ -7,5 +7,11 @@
       <jdbc-driver>com.cloudera.hive.jdbc41.HS2Driver</jdbc-driver>
       <jdbc-url>jdbc:hive2://zehui01:10000</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="impala-test" uuid="3e6cd035-dd32-47f0-8ff5-75692293f6ae">
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>com.cloudera.impala.jdbc41.Driver</jdbc-driver>
+      <jdbc-url>jdbc:impala://zehui01:21050</jdbc-url>
+    </data-source>
   </component>
 </project>

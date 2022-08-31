@@ -1,4 +1,4 @@
-package com.yumaofei.test
+package com.yumaofei.Test1
 
 object Test1 {
   def main(args: Array[String]): Unit = {
@@ -9,4 +9,6 @@ object Test1 {
         |zhangsan
         |""".stripMargin)
   }
+
+
 }
