@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="hive">
+    <output-path>$PROJECT_DIR$/out/artifacts/hive</output-path>
+    <root id="archive" name="hive.jar">
+      <element id="module-output" name="hive" />
+    </root>
+  </artifact>
+</component>

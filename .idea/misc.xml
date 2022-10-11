@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/dataDictionary/pom.xml" />
         <option value="$PROJECT_DIR$/kudu/pom.xml" />
         <option value="$PROJECT_DIR$/hive/pom.xml" />
+        <option value="$PROJECT_DIR$/flinkKafkaKudu/pom.xml" />
       </list>
     </option>
   </component>

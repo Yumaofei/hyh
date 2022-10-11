@@ -6,17 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="flink" />
+        <module name="flinkKafkaKudu" />
+        <module name="dataDictionary" />
+        <module name="bigdataLineageAnaly" />
         <module name="kudu" />
         <module name="hive" />
-        <module name="dataDictionary" />
-        <module name="flink" />
-        <module name="bigdataLineageAnaly" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bigdataLineageAnaly" target="8" />
       <module name="dataDictionary" target="1.5" />
       <module name="flink" target="8" />
+      <module name="flinkKafkaKudu" target="1.8" />
       <module name="hive" target="1.5" />
       <module name="kudu" target="1.5" />
     </bytecodeTargetLevel>

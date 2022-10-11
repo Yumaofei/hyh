@@ -16,7 +16,7 @@ public class TestKudu {
     //定义KuduClient客户端对象
     private static KuduClient kuduClient;
     //定义表名
-    private static String tableName = "person";
+    private static String tableName = "test2_2";
 
     /**
      * 初始化方法
@@ -24,7 +24,7 @@ public class TestKudu {
     @Before
     public void init() {
         //指定master地址
-        String masterAddress = "node2.itcast.cn";
+        String masterAddress = "hdp";
         //创建kudu的数据库连接
         kuduClient = new KuduClient.KuduClientBuilder(masterAddress).defaultSocketReadTimeoutMs(6000).build();
     }
@@ -46,17 +46,15 @@ public class TestKudu {
     public void createTable() throws KuduException {
         //设置表的schema
         List<ColumnSchema> columns = new LinkedList<ColumnSchema>();
-        columns.add(newColumn("CompanyId", Type.INT32, true));
-        columns.add(newColumn("WorkId", Type.INT32, false));
-        columns.add(newColumn("Name", Type.STRING, false));
-        columns.add(newColumn("Gender", Type.STRING, false));
-        columns.add(newColumn("Photo", Type.STRING, false));
+        columns.add(newColumn("id", Type.INT32, true));
+        columns.add(newColumn("valuess", Type.INT32, false));
+        columns.add(newColumn("timess", Type.STRING, false));
         Schema schema = new Schema(columns);
         //创建表时提供的所有选项
         CreateTableOptions tableOptions = new CreateTableOptions();
         //设置表的副本和分区规则
         LinkedList<String> list = new LinkedList<String>();
-        list.add("CompanyId");
+        list.add("id");
         //设置表副本数
         tableOptions.setNumReplicas(1);
         //设置range分区
@@ -64,7 +62,7 @@ public class TestKudu {
         //设置hash分区和分区的数量
         tableOptions.addHashPartitions(list, 3);
         try {
-            kuduClient.createTable("person", schema, tableOptions);
+            kuduClient.createTable(tableName, schema, tableOptions);
         } catch (Exception e) {
             e.printStackTrace();
         }
